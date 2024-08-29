@@ -1,7 +1,7 @@
-# 2024 RSS Quarto Workshop
+# Reproducible Data Reports with Quarto
 
-This workshop was developed by Myles for the RSS International Conference 2024
-taking place in Brighton.
+This workshop was developed by Myles (Jumping Rivers) for the RSS International
+Conference 2024 taking place in Brighton.
 
 The aim is to provide a basic introduction to creating reproducible data reports
 with Quarto with a focus on R.
