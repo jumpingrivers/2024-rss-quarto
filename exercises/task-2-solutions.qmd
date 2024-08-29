@@ -1,0 +1,57 @@
+---
+title: "Lemur Statistics"
+author: "Your Name"
+format: html
+---
+
+## About Lemurs
+
+The [Duke Lemur Center](https://lemur.duke.edu/) houses over 200 lemurs and bushbabies across 13 species -- the most diverse population of lemurs on Earth, outside their native Madagascar.
+
+Lemurs are the most threatened group of mammals on the planet, and 95% of lemur species are at risk of extinction.
+
+[![Image from Duke Lemur Center](mongoose-lemur.png){fig-alt="Mongoose lemur looking directly at the camera"}](https://lemur.duke.edu/discover/meet-the-lemurs/mongoose-lemur)
+
+## R 
+
+### Load packages and data
+
+```{r}
+#| echo: false
+#| message: false
+library(readr)
+library(dplyr)
+library(tidyr)
+library(ggplot2)
+lemurs <- read_csv(
+  "https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2021/2021-08-24/lemur_data.csv",
+  col_types = cols_only(sex = "c", age_at_wt_mo = "d", weight_g = "d"))
+```
+
+### Scatter plot
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+#| fig-cap: "Age vs weight of lemurs"
+#| fig-alt: "Scatter plot of age vs weight of lemurs, split by male and female showing positive relationship for both"
+ggplot(data = lemurs,
+       mapping = aes(x = age_at_wt_mo,
+                     y = weight_g,
+                     colour = sex)) +
+  geom_point(size = 0.2) +
+  geom_smooth(method = "lm") +
+  labs(title = "Weight of lemurs",
+       x = "Age (months)",
+       y = "Weight (g)") +
+  theme_minimal()
+```
+
+### Average weight
+
+```{r}
+#| echo: true
+#| message: false
+mean(lemurs$weight_g)
+```
