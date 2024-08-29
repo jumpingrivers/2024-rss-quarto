@@ -10,7 +10,7 @@ The workshop slot is 1 hour 20 minutes.
 
 ## Slides
 
-The slides can be viewed at URL. Alternatively, you can open the **slides.html**
+The slides can be viewed at URL. Alternatively, you can open the **index.html**
 file in a web browser.
 
 ## Exercises
